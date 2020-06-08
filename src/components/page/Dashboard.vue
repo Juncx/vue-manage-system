@@ -33,33 +33,38 @@
             </el-col>
             <el-col :span="21">
                 <el-card shadow="hover" class="mgb20" style="height:800px;">
-                    <el-row :gutter="20" type="flex" class="mgb20" justify="center" style="height:250px;">
+                    <el-row :gutter="20" type="flex" class="card-body" justify="center" style="height:250px;">
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
                                 <div class="grid-content grid-con-1">
-                                    <i class="el-icon-lx-people grid-con-icon"></i>
+                                    <!-- <i class="el-icon-lx-people grid-con-icon"></i> -->
+                                    <img src="../../icon/atlassian_icon.png" class="user-avator" alt />
                                     <div class="grid-cont-right">
-                                        <div class="grid-num">Crowd</div>
+                                        <div>
+                                            <a class="grid-num" target="_blank" href="https://www.google.com">Crowd</a>
+                                        </div>
                                         <div>用户访问量</div>
                                     </div>
                                 </div>
                             </el-card>
                         </el-col>
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
                                 <div class="grid-content grid-con-2">
-                                    <i class="el-icon-lx-notice grid-con-icon"></i>
+                                    <!-- <i class="el-icon-lx-notice grid-con-icon"></i> -->
+                                    <img src="../../icon/confluence_icon.jpg" class="user-avator" alt />
                                     <div class="grid-cont-right">
-                                        <div class="grid-num">Confluence</div>
+                                        <a class="grid-num" target="_blank" href="https://www.baidu.com">Confluence</a>
                                         <div>系统消息</div>
                                     </div>
                                 </div>
                             </el-card>
                         </el-col>
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
                                 <div class="grid-content grid-con-3">
-                                    <i class="el-icon-lx-goods grid-con-icon"></i>
+                                    <!-- <i class="el-icon-lx-goods grid-con-icon"></i> -->
+                                    <img src="../../icon/jira_icon.png" class="user-avator" alt />
                                     <div class="grid-cont-right">
                                         <div class="grid-num">Jira</div>
                                         <div>数量</div>
@@ -70,9 +75,10 @@
                     </el-row>
                     <el-row :gutter="20" type="flex" class="mgb20" justify="center" >
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
                                 <div class="grid-content grid-con-1">
-                                    <i class="el-icon-lx-people grid-con-icon"></i>
+                                    <!-- <i class="el-icon-lx-people grid-con-icon"></i> -->
+                                    <img src="../../icon/gitlab_icon.png" class="user-avator" alt />
                                     <div class="grid-cont-right">
                                         <div class="grid-num">Gitlab</div>
                                         <div>用户访问量</div>
@@ -81,9 +87,10 @@
                             </el-card>
                         </el-col>
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
                                 <div class="grid-content grid-con-2">
-                                    <i class="el-icon-lx-notice grid-con-icon"></i>
+                                    <!-- <i class="el-icon-lx-notice grid-con-icon"></i> -->
+                                    <img src="../../icon/nextcloud_icon.jpg" class="user-avator" alt />
                                     <div class="grid-cont-right">
                                         <div class="grid-num">NextCloud</div>
                                         <div>系统消息</div>
@@ -92,11 +99,11 @@
                             </el-card>
                         </el-col>
                         <el-col :span="6">
-                            <el-card shadow="hover" :body-style="{padding: '0px'}">
-                                <div class="grid-content grid-con-3">
-                                    <i class="el-icon-lx-goods grid-con-icon"></i>
+                            <el-card shadow="hover" :body-style="{padding: '50px'}">
+                                <div class="grid-content grid-con-1">
+                                    <i class="el-icon-s-home grid-con-icon"></i>
                                     <div class="grid-cont-right">
-                                        <div class="grid-num">KeeWeb</div>
+                                        <div class="grid-num">Others</div>
                                         <div>数量</div>
                                     </div>
                                 </div>
@@ -343,6 +350,12 @@ export default {
 
 .mgb20 {
     /* height: 200px; */
+    margin-bottom: 20px;
+}
+
+.card-body {
+    /* height: 200px; */
+    color:#999;
     margin-bottom: 20px;
 }
 
