@@ -1,10 +1,12 @@
 <template>
     <div>
-        <el-row :gutter="20">
-            <el-col :span="8">
-                <el-card shadow="hover" class="mgb20" style="height:252px;">
+        <el-row :gutter="20" style="height:800px;">
+            <el-col :span="3">
+                <el-card shadow="hover" class="mgb20" style="height:800px;">
                     <div class="user-info">
-                        <img src="../../assets/img/img.jpg" class="user-avator" alt />
+                        <div>
+                            <img src="../../assets/img/img.jpg" class="user-avator" alt />
+                        </div>
                         <div class="user-info-cont">
                             <div class="user-info-name">{{name}}</div>
                             <div>{{role}}</div>
@@ -19,7 +21,7 @@
                         <span>东莞</span>
                     </div>
                 </el-card>
-                <el-card shadow="hover" style="height:252px;">
+                <!-- <el-card shadow="hover" style="height:252px;">
                     <div slot="header" class="clearfix">
                         <span>语言详情</span>
                     </div>Vue
@@ -27,45 +29,82 @@
                     <el-progress :percentage="24.1" color="#f1e05a"></el-progress>CSS
                     <el-progress :percentage="13.7"></el-progress>HTML
                     <el-progress :percentage="5.9" color="#f56c6c"></el-progress>
-                </el-card>
+                </el-card>-->
             </el-col>
-            <el-col :span="16">
-                <el-row :gutter="20" class="mgb20">
-                    <el-col :span="8">
-                        <el-card shadow="hover" :body-style="{padding: '0px'}">
-                            <div class="grid-content grid-con-1">
-                                <i class="el-icon-lx-people grid-con-icon"></i>
-                                <div class="grid-cont-right">
-                                    <div class="grid-num">1234</div>
-                                    <div>用户访问量</div>
+            <el-col :span="21">
+                <el-card shadow="hover" class="mgb20" style="height:800px;">
+                    <el-row :gutter="20" type="flex" class="mgb20" justify="center" style="height:250px;">
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-1">
+                                    <i class="el-icon-lx-people grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">Crowd</div>
+                                        <div>用户访问量</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="8">
-                        <el-card shadow="hover" :body-style="{padding: '0px'}">
-                            <div class="grid-content grid-con-2">
-                                <i class="el-icon-lx-notice grid-con-icon"></i>
-                                <div class="grid-cont-right">
-                                    <div class="grid-num">321</div>
-                                    <div>系统消息</div>
+                            </el-card>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-2">
+                                    <i class="el-icon-lx-notice grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">Confluence</div>
+                                        <div>系统消息</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </el-card>
-                    </el-col>
-                    <el-col :span="8">
-                        <el-card shadow="hover" :body-style="{padding: '0px'}">
-                            <div class="grid-content grid-con-3">
-                                <i class="el-icon-lx-goods grid-con-icon"></i>
-                                <div class="grid-cont-right">
-                                    <div class="grid-num">5000</div>
-                                    <div>数量</div>
+                            </el-card>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-3">
+                                    <i class="el-icon-lx-goods grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">Jira</div>
+                                        <div>数量</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </el-card>
-                    </el-col>
-                </el-row>
-                <el-card shadow="hover" style="height:403px;">
+                            </el-card>
+                        </el-col>
+                    </el-row>
+                    <el-row :gutter="20" type="flex" class="mgb20" justify="center" >
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-1">
+                                    <i class="el-icon-lx-people grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">Gitlab</div>
+                                        <div>用户访问量</div>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-2">
+                                    <i class="el-icon-lx-notice grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">NextCloud</div>
+                                        <div>系统消息</div>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                        <el-col :span="6">
+                            <el-card shadow="hover" :body-style="{padding: '0px'}">
+                                <div class="grid-content grid-con-3">
+                                    <i class="el-icon-lx-goods grid-con-icon"></i>
+                                    <div class="grid-cont-right">
+                                        <div class="grid-num">KeeWeb</div>
+                                        <div>数量</div>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                    </el-row>
+                </el-card>
+                <!-- <el-card shadow="hover" style="height:403px;">
                     <div slot="header" class="clearfix">
                         <span>待办事项</span>
                         <el-button style="float: right; padding: 3px 0" type="text">添加</el-button>
@@ -91,19 +130,7 @@
                             </template>
                         </el-table-column>
                     </el-table>
-                </el-card>
-            </el-col>
-        </el-row>
-        <el-row :gutter="20">
-            <el-col :span="12">
-                <el-card shadow="hover">
-                    <schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
-                </el-card>
-            </el-col>
-            <el-col :span="12">
-                <el-card shadow="hover">
-                    <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
-                </el-card>
+                </el-card>-->
             </el-col>
         </el-row>
     </div>
@@ -172,50 +199,7 @@ export default {
                     name: '2018/09/10',
                     value: 1065
                 }
-            ],
-            options: {
-                type: 'bar',
-                title: {
-                    text: '最近一周各品类销售图'
-                },
-                xRorate: 25,
-                labels: ['周一', '周二', '周三', '周四', '周五'],
-                datasets: [
-                    {
-                        label: '家电',
-                        data: [234, 278, 270, 190, 230]
-                    },
-                    {
-                        label: '百货',
-                        data: [164, 178, 190, 135, 160]
-                    },
-                    {
-                        label: '食品',
-                        data: [144, 198, 150, 235, 120]
-                    }
-                ]
-            },
-            options2: {
-                type: 'line',
-                title: {
-                    text: '最近几个月各品类销售趋势图'
-                },
-                labels: ['6月', '7月', '8月', '9月', '10月'],
-                datasets: [
-                    {
-                        label: '家电',
-                        data: [234, 278, 270, 190, 230]
-                    },
-                    {
-                        label: '百货',
-                        data: [164, 178, 150, 135, 160]
-                    },
-                    {
-                        label: '食品',
-                        data: [74, 118, 200, 235, 90]
-                    }
-                ]
-            }
+            ]
         };
     },
     components: {
@@ -321,7 +305,7 @@ export default {
 }
 
 .user-info {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     padding-bottom: 20px;
     border-bottom: 2px solid #ccc;
@@ -335,6 +319,7 @@ export default {
 }
 
 .user-info-cont {
+    align-items: center;
     padding-left: 50px;
     flex: 1;
     font-size: 14px;
@@ -357,6 +342,7 @@ export default {
 }
 
 .mgb20 {
+    /* height: 200px; */
     margin-bottom: 20px;
 }
 

@@ -33,16 +33,25 @@ export default {
         return {
             param: {
                 username: 'admin',
-                password: '123123',
+                password: '123123'
             },
             rules: {
                 username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-            },
+                password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+            }
         };
     },
     methods: {
         submitForm() {
+            // this.$axios
+            //     .get('https://www.runoob.com/try/ajax/json_demo.json')
+            //     .then(response => (this.info = response))
+            //     .catch(function(error) {
+            //         // 请求失败处理
+            //         console.log(error);
+            //     });
+            // console.log(response);
+
             this.$refs.login.validate(valid => {
                 if (valid) {
                     this.$message.success('登录成功');
@@ -54,8 +63,8 @@ export default {
                     return false;
                 }
             });
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -79,7 +88,7 @@ export default {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 350px;
+    width: 400px;
     margin: -190px 0 0 -175px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.3);
