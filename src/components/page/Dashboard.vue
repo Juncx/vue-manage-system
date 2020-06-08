@@ -5,7 +5,7 @@
                 <el-card shadow="hover" class="mgb20" style="height:800px;">
                     <div class="user-info">
                         <div>
-                            <img src="../../assets/img/img.jpg" class="user-avator" alt />
+                            <img src="../../assets/img/img.jpg" class="user-avator" alt="" style="margin: 0 auto;" />
                         </div>
                         <div class="user-info-cont">
                             <div class="user-info-name">{{name}}</div>
@@ -62,7 +62,7 @@
                         </el-col>
                         <el-col :span="6">
                             <el-card shadow="hover" :body-style="{padding: '50px'}">
-                                <div class="grid-content grid-con-3">
+                                <div class="grid-content grid-con-1">
                                     <!-- <i class="el-icon-lx-goods grid-con-icon"></i> -->
                                     <img src="../../icon/jira_icon.png" class="user-avator" alt />
                                     <div class="grid-cont-right">
@@ -285,6 +285,7 @@ export default {
     text-align: center;
     line-height: 100px;
     color: #fff;
+    /* border-radius: 50%; */
 }
 
 .grid-con-1 .grid-con-icon {
@@ -320,6 +321,13 @@ export default {
 }
 
 .user-avator {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.app-icon {
     width: 120px;
     height: 120px;
     border-radius: 50%;
