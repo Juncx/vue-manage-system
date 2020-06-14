@@ -13,7 +13,7 @@
                     <el-tooltip effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
                         <i class="el-icon-rank"></i>
                     </el-tooltip>
-                </div> -->
+                </div>-->
                 <!-- 消息中心 -->
                 <!-- <div class="btn-bell">
                     <el-tooltip
@@ -26,7 +26,7 @@
                         </router-link>
                     </el-tooltip>
                     <span class="btn-bell-badge" v-if="message"></span>
-                </div> -->
+                </div>-->
                 <!-- 用户头像 -->
                 <div class="user-avator">
                     <img src="../../assets/img/img.jpg" />
@@ -38,10 +38,51 @@
                         <i class="el-icon-caret-bottom"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>修改密码</el-dropdown-item>
+                        <el-dropdown-item>
+                            <el-button type="text" @click="dialogVisible = true">修改密码</el-button>
+                        </el-dropdown-item>
                         <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
+
+                <el-dialog
+                    title="提示"
+                    :visible.sync="dialogVisible"
+                    width="30%"
+                    :before-close="handleClose"
+                >
+                    <span>这是一段信息</span>
+                    <el-form
+                        :model="ruleForm"
+                        status-icon
+                        :rules="rules"
+                        ref="ruleForm"
+                        label-width="100px"
+                        class="demo-ruleForm"
+                    >
+                        <el-form-item label="密码" prop="pass">
+                            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="确认密码" prop="checkPass">
+                            <el-input
+                                type="password"
+                                v-model="ruleForm.checkPass"
+                                autocomplete="off"
+                            ></el-input>
+                        </el-form-item>
+                        <el-form-item label="年龄" prop="age">
+                            <el-input v-model.number="ruleForm.age"></el-input>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+                            <el-button @click="resetForm('ruleForm')">重置</el-button>
+                        </el-form-item>
+                    </el-form>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                    </span>
+                </el-dialog>
             </div>
         </div>
     </div>
@@ -50,11 +91,57 @@
 import bus from '../common/bus';
 export default {
     data() {
+        var checkAge = (rule, value, callback) => {
+            if (!value) {
+                return callback(new Error('年龄不能为空'));
+            }
+            setTimeout(() => {
+                if (!Number.isInteger(value)) {
+                    callback(new Error('请输入数字值'));
+                } else {
+                    if (value < 18) {
+                        callback(new Error('必须年满18岁'));
+                    } else {
+                        callback();
+                    }
+                }
+            }, 1000);
+        };
+        var validatePass = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('请输入密码'));
+            } else {
+                if (this.ruleForm.checkPass !== '') {
+                    this.$refs.ruleForm.validateField('checkPass');
+                }
+                callback();
+            }
+        };
+        var validatePass2 = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('请再次输入密码'));
+            } else if (value !== this.ruleForm.pass) {
+                callback(new Error('两次输入密码不一致!'));
+            } else {
+                callback();
+            }
+        };
         return {
+            dialogVisible: false,
             collapse: false,
             fullscreen: false,
             name: 'linxin',
-            message: 2
+            message: 2,
+            ruleForm: {
+                pass: '',
+                checkPass: '',
+                age: ''
+            },
+            rules: {
+                pass: [{ validator: validatePass, trigger: 'blur' }],
+                checkPass: [{ validator: validatePass2, trigger: 'blur' }],
+                age: [{ validator: checkAge, trigger: 'blur' }]
+            }
         };
     },
     computed: {
@@ -64,6 +151,13 @@ export default {
         }
     },
     methods: {
+        handleClose(done) {
+            this.$confirm('确认关闭？')
+                .then(_ => {
+                    done();
+                })
+                .catch(_ => {});
+        },
         // 用户名下拉菜单选择事件
         handleCommand(command) {
             if (command == 'loginout') {

@@ -11,6 +11,7 @@ import './components/common/directives';
 import 'babel-polyfill';
 import axios from 'axios'
 
+
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false;
 Vue.use(VueI18n);
